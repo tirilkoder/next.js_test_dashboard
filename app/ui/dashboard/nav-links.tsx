@@ -1,9 +1,10 @@
 'use client';
 
 import {
-  UserGroupIcon,
+  ShoppingCartIcon,
   HomeIcon,
   DocumentDuplicateIcon,
+  ShoppingBagIcon,
 } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -14,11 +15,11 @@ import clsx from 'clsx';
 const links = [
   { name: 'Hjem', href: '/dashboard', icon: HomeIcon },
   {
-    name: 'Oppgaver',
+    name: 'Produkter',
     href: '/dashboard/invoices',
-    icon: DocumentDuplicateIcon,
+    icon: ShoppingBagIcon,
   },
-  { name: 'Grupper', href: '/dashboard/customers', icon: UserGroupIcon },
+  { name: 'Handlekurv', href: '/dashboard/customers', icon: ShoppingCartIcon },
 ];
 
 export default function NavLinks() {
@@ -32,9 +33,9 @@ export default function NavLinks() {
             key={link.name}
             href={link.href}
             className={clsx(
-              'flex h-[48px] grow items-center justify-center gap-2 rounded-md bg-gray-50 p-3 text-sm font-medium hover:bg-sky-100 hover:text-blue-600 md:flex-none md:justify-start md:p-2 md:px-3',
+              'flex h-[48px] grow items-center justify-center gap-2 rounded-md bg-gray-50 p-3 text-sm font-medium hover:bg-red-100 hover:text-red-500 md:flex-none md:justify-start md:p-2 md:px-3',
               {
-                'bg-sky-100 text-blue-600': pathname === link.href,
+                'bg-red-100 text-red-500': pathname === link.href,
               },
             )}
           >
